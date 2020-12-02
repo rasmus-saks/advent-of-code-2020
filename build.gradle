@@ -1,0 +1,23 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.4.10'
+    id 'application'
+}
+
+group = 'me.saks'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = '13'
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = '13'
+}
+
+application {
+    mainClassName = 'MainKt'
+}
