@@ -1,5 +1,6 @@
+package me.saks.advent
+
 import java.io.InputStreamReader
-import java.lang.IllegalArgumentException
 
 fun <T> Collection<T>.allPairs(): List<Pair<T, T>> {
     return this.flatMap { el1 ->
@@ -64,6 +65,12 @@ operator fun MatchResult.get(name: String): String {
 
 fun String.readInputLines(): List<String> {
     return InputStreamReader(ClassLoader.getSystemResource(this).openStream()).use { stream ->
-        stream.readLines().filter { it.trim().isNotEmpty() }
+        stream.readLines().map { it.trim() }
+    }
+}
+
+fun String.readInputSplitBy(delimiter: String): List<String> {
+    return InputStreamReader(ClassLoader.getSystemResource(this).openStream()).use { stream ->
+        stream.readText().split(delimiter).map { it.trim() }
     }
 }

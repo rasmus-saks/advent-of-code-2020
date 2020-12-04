@@ -1,5 +1,7 @@
+package me.saks.advent
+
 fun main() {
-    val input = "day3.txt".readInputLines()
+    val input = "day03.txt".readInputLines()
 
     slope(3, 1)
         .takeWhile { it.second < input.size }
