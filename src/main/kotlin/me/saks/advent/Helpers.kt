@@ -42,12 +42,14 @@ fun Collection<String>.toInt(): List<Int> {
     return this.map { it.toInt() }
 }
 
-fun Any?.partOneSolution() {
+fun <T> T.partOneSolution(): T {
     println("Part 1 solution: $this")
+    return this
 }
 
-fun Any?.partTwoSolution() {
+fun <T> T.partTwoSolution(): T {
     println("Part 2 solution: $this")
+    return this
 }
 
 fun <T> T.print(): T {
