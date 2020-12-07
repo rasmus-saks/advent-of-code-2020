@@ -61,8 +61,8 @@ fun Int.between(min: Int, max: Int): Boolean {
     return this in min..max
 }
 
-operator fun MatchResult.get(name: String): String {
-    return this.groups[name]!!.value
+operator fun MatchResult?.get(name: String): String {
+    return this!!.groups[name]!!.value
 }
 
 fun String.readInputLines(): List<String> {
@@ -73,6 +73,6 @@ fun String.readInputLines(): List<String> {
 
 fun String.readInputSplitBy(delimiter: String): List<String> {
     return InputStreamReader(ClassLoader.getSystemResource(this).openStream()).use { stream ->
-        stream.readText().split(delimiter).map { it.trim() }
+        stream.readText().split(delimiter).map { it.trim() }.filter { it.isNotEmpty() }
     }
 }
