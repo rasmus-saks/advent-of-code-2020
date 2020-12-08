@@ -76,3 +76,7 @@ fun String.readInputSplitBy(delimiter: String): List<String> {
         stream.readText().split(delimiter).map { it.trim() }.filter { it.isNotEmpty() }
     }
 }
+
+fun <T> List<T>.replace(index: Int, newValue: T): List<T> {
+    return this.take(index) + newValue + this.takeLast(this.size - index - 1)
+}
