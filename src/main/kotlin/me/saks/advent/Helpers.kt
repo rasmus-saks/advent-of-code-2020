@@ -38,6 +38,10 @@ operator fun <A, B, C> Pair<A, B>.plus(third: C): Triple<A, B, C> {
     return Triple(this.first, this.second, third)
 }
 
+operator fun <A, B> Pair<List<A>, List<B>>.plus(other: Pair<A, B>): Pair<List<A>, List<B>> {
+    return Pair(this.first + other.first, this.second + other.second)
+}
+
 fun Collection<String>.toInt(): List<Int> {
     return this.map { it.toInt() }
 }
@@ -79,4 +83,33 @@ fun String.readInputSplitBy(delimiter: String): List<String> {
 
 fun <T> List<T>.replace(index: Int, newValue: T): List<T> {
     return this.take(index) + newValue + this.takeLast(this.size - index - 1)
+}
+
+fun chineseRemainder(n: List<Long>, a: List<Long>): Long {
+    var sum = 0L
+    val prod = n.reduce { acc, l -> acc * l }
+    n.zip(a).forEach { (n2, a2) ->
+        val p = prod / n2
+        sum += a2 * multInv(p, n2) * p
+    }
+    return sum % prod
+}
+
+private fun multInv(a: Long, b: Long): Long {
+    if (b == 1L) return 1
+    var aa = a
+    var bb = b
+    var x0 = 0L
+    var x1 = 1L
+    while (aa > 1) {
+        val q = aa / bb
+        var t = bb
+        bb = aa % bb
+        aa = t
+        t = x0
+        x0 = x1 - q * x0
+        x1 = t
+    }
+    if (x1 < 0) x1 += b
+    return x1
 }
