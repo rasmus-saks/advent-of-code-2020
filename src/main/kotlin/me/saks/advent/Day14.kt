@@ -1,9 +1,9 @@
 package me.saks.advent
 
-val MASK = Regex("""mask = (?<mask>[X01]{36})""")
-val MEM = Regex("""mem\[(?<addr>\d+)] = (?<val>\d+)""")
+private val MASK = Regex("""mask = (?<mask>[X01]{36})""")
+private val MEM = Regex("""mem\[(?<addr>\d+)] = (?<val>\d+)""")
 
-val MEMORY = mutableMapOf<Long, Long>()
+private val MEMORY = mutableMapOf<Long, Long>()
 
 fun main() {
     var mask = "X".repeat(36)
@@ -27,9 +27,8 @@ fun main() {
             }
             MEM.matchEntire(line)?.let {
                 allAddressMasks(mask)
-                    .forEach { addrMask ->
-                        MEMORY[applyMask(addrMask, it["addr"])] = it["val"].toLong()
-                    }
+                    .map { m -> applyMask(m, it["addr"]) }
+                    .forEach { addr -> MEMORY[addr] = it["val"].toLong() }
             }
         }
     MEMORY.values.sum().partTwoSolution()
