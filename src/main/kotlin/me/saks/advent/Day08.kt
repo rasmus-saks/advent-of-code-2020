@@ -4,7 +4,7 @@ val INSTRUCTION = Regex("""(?<ins>\w{3}) (?<arg>[+-]\d+)""")
 
 data class Environment(val pc: Int = 0, val acc: Int = 0)
 
-val OPERATIONS = mapOf<String, (Environment, Int) -> Environment>(
+private val OPERATIONS = mapOf<String, (Environment, Int) -> Environment>(
     "acc" to { e, arg -> e.copy(pc = e.pc + 1, acc = e.acc + arg) },
     "jmp" to { e, arg -> e.copy(pc = e.pc + arg, acc = e.acc) },
     "nop" to { e, _ -> e.copy(pc = e.pc + 1, acc = e.acc) },
