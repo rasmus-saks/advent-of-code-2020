@@ -53,7 +53,7 @@ fun main() {
         .partTwoSolution()
 }
 
-data class Rule(val name: String, val range1: IntRange, val range2: IntRange) {
+private data class Rule(val name: String, val range1: IntRange, val range2: IntRange) {
     fun isValid(value: Int): Boolean {
         return value in range1 || value in range2
     }
