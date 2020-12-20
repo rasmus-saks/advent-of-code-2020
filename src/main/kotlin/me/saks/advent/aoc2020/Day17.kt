@@ -1,9 +1,11 @@
-package me.saks.advent
+package me.saks.advent.aoc2020
+
+import me.saks.advent.helpers.*
 
 fun main() {
     var activeCubes3 = mutableListOf<Vector<Vector3>>()
     var activeCubes4 = mutableListOf<Vector<Vector4>>()
-    "day17.txt"
+    "2020/17.txt"
         .readInputLines()
         .forEachIndexed { y, line ->
             line.forEachIndexed { x, c ->

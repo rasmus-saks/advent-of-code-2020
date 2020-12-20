@@ -1,4 +1,4 @@
-package me.saks.advent
+package me.saks.advent.helpers
 
 @Suppress("UNCHECKED_CAST")
 fun <T> fromComponents(components: List<Int>): Vector<T> {

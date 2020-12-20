@@ -1,4 +1,9 @@
-package me.saks.advent
+package me.saks.advent.aoc2020
+
+import me.saks.advent.helpers.get
+import me.saks.advent.helpers.partOneSolution
+import me.saks.advent.helpers.partTwoSolution
+import me.saks.advent.helpers.readInputLines
 
 private val MASK = Regex("""mask = (?<mask>[X01]{36})""")
 private val MEM = Regex("""mem\[(?<addr>\d+)] = (?<val>\d+)""")
@@ -7,7 +12,7 @@ private val MEMORY = mutableMapOf<Long, Long>()
 
 fun main() {
     var mask = "X".repeat(36)
-    "day14.txt".readInputLines()
+    "2020/14.txt".readInputLines()
         .forEach { line ->
             MASK.matchEntire(line)?.let {
                 mask = it["mask"]
@@ -20,7 +25,7 @@ fun main() {
 
     MEMORY.clear()
 
-    "day14.txt".readInputLines()
+    "2020/14.txt".readInputLines()
         .forEach { line ->
             MASK.matchEntire(line)?.let {
                 mask = it["mask"]

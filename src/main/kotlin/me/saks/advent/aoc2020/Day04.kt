@@ -1,4 +1,9 @@
-package me.saks.advent
+package me.saks.advent.aoc2020
+
+import me.saks.advent.helpers.get
+import me.saks.advent.helpers.partOneSolution
+import me.saks.advent.helpers.partTwoSolution
+import me.saks.advent.helpers.readInputSplitBy
 
 val ALL_FIELDS = listOf("byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"/*, "cid"*/)
 val KEY_VALUE = Regex("""(?<key>.+):(?<value>.+)""")
@@ -17,13 +22,13 @@ val VALIDATIONS = mapOf<String, (String) -> Boolean>(
 )
 
 fun main() {
-    "day04.txt".readInputSplitBy("\n\n")
+    "2020/04.txt".readInputSplitBy("\n\n")
         .count { line ->
             (ALL_FIELDS - line.split("\n", " ").map { KEY_VALUE.matchEntire(it)!!["key"] }).isEmpty()
         }
         .partOneSolution()
 
-    "day04.txt".readInputSplitBy("\n\n")
+    "2020/04.txt".readInputSplitBy("\n\n")
         .count { line ->
             (ALL_FIELDS - line.split("\n", " ")
                 .map { KEY_VALUE.matchEntire(it)!! }

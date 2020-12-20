@@ -1,7 +1,11 @@
-package me.saks.advent
+package me.saks.advent.aoc2020
+
+import me.saks.advent.helpers.partOneSolution
+import me.saks.advent.helpers.partTwoSolution
+import me.saks.advent.helpers.readInputLines
 
 fun main() {
-    var board = "day11.txt"
+    var board = "2020/11.txt"
         .readInputLines()
     var newBoard = frame(board)
     while (newBoard != board) {
@@ -10,7 +14,7 @@ fun main() {
     }
     board.sumOf { it.count { c -> c == '#'} }.partOneSolution()
 
-    board = "day11.txt"
+    board = "2020/11.txt"
         .readInputLines()
     newBoard = frame(board, 100, 5)
     while (newBoard != board) {

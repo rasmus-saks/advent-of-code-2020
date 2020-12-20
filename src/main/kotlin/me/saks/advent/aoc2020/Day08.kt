@@ -1,4 +1,6 @@
-package me.saks.advent
+package me.saks.advent.aoc2020
+
+import me.saks.advent.helpers.*
 
 val INSTRUCTION = Regex("""(?<ins>\w{3}) (?<arg>[+-]\d+)""")
 
@@ -16,7 +18,7 @@ sealed class RunResult(val env: Environment) {
 }
 
 fun main() {
-    val lines = "day08.txt".readInputLines()
+    val lines = "2020/08.txt".readInputLines()
     val baseRun = runProgram(lines) as RunResult.Loops
     baseRun.env.acc.partOneSolution()
 

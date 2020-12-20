@@ -1,14 +1,16 @@
-package me.saks.advent
+package me.saks.advent.aoc2020
+
+import me.saks.advent.helpers.*
 
 fun main() {
-    "day02.txt".readInputLines()
+    "2020/02.txt".readInputLines()
         .map { Regex("""(?<min>\d+)-(?<max>\d+) (?<c>.): (?<pw>.+)""").matchEntire(it)!! }
         .map { Triple(it["min"].toInt(), it["pw"].count { c -> it["c"][0] == c }, it["max"].toInt()) }
         .filter { it.second.between(it.first, it.third) }
         .count()
         .partOneSolution()
 
-    "day02.txt".readInputLines()
+    "2020/02.txt".readInputLines()
         .map { Regex("""(?<idx1>\d+)-(?<idx2>\d+) (?<c>.): (?<pw>.+)""").matchEntire(it)!! }
         .map {
             Triple(

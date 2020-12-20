@@ -1,7 +1,11 @@
-package me.saks.advent
+package me.saks.advent.aoc2020
+
+import me.saks.advent.helpers.partOneSolution
+import me.saks.advent.helpers.partTwoSolution
+import me.saks.advent.helpers.readInputLines
 
 fun main() {
-    val adapters = "day10.txt"
+    val adapters = "2020/10.txt"
         .readInputLines()
         .map { it.toLong() }
         .sorted()

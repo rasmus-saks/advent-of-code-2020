@@ -1,4 +1,8 @@
-package me.saks.advent
+package me.saks.advent.aoc2020
+
+import me.saks.advent.helpers.partOneSolution
+import me.saks.advent.helpers.partTwoSolution
+import me.saks.advent.helpers.readInputLines
 
 
 private val OPERATIONS = mapOf<Char, (Long, Long) -> Long>(
@@ -7,13 +11,13 @@ private val OPERATIONS = mapOf<Char, (Long, Long) -> Long>(
 )
 
 fun main() {
-    "day18.txt"
+    "2020/18.txt"
         .readInputLines()
         .map { parse(it, listOf("+*")).evaluate() }
         .sum()
         .partOneSolution()
 
-    "day18.txt"
+    "2020/18.txt"
         .readInputLines()
         .map { parse(it, listOf("+", "*")).evaluate() }
         .sum()

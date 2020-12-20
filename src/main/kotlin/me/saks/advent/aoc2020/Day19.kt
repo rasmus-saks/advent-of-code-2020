@@ -1,10 +1,14 @@
-package me.saks.advent
+package me.saks.advent.aoc2020
+
+import me.saks.advent.helpers.partOneSolution
+import me.saks.advent.helpers.partTwoSolution
+import me.saks.advent.helpers.readInputSplitBy
 
 private val RULES = mutableMapOf<Int, MessageRule>()
 
 fun main() {
     run {
-        val (unparsed, messages) = "day19.txt"
+        val (unparsed, messages) = "2020/19.txt"
             .readInputSplitBy("\n\n")
             .map { it.split("\n") }
 
@@ -20,7 +24,7 @@ fun main() {
         RULES.clear()
     }
     run {
-        val (unparsed, messages) = "day19-part2.txt"
+        val (unparsed, messages) = "2020/09-2.txt"
             .readInputSplitBy("\n\n")
             .map { it.split("\n") }
 

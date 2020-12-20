@@ -1,4 +1,4 @@
-package me.saks.advent
+package me.saks.advent.aoc2020
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.data.forAll

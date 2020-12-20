@@ -1,7 +1,11 @@
-package me.saks.advent
+package me.saks.advent.aoc2020
+
+import me.saks.advent.helpers.partOneSolution
+import me.saks.advent.helpers.partTwoSolution
+import me.saks.advent.helpers.readInputLines
 
 fun main() {
-    val input = "day03.txt".readInputLines()
+    val input = "2020/03.txt".readInputLines()
 
     slope(3, 1)
         .takeWhile { it.second < input.size }

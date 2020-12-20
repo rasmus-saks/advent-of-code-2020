@@ -1,9 +1,12 @@
-package me.saks.advent
+package me.saks.advent.aoc2020
 
+import me.saks.advent.helpers.partOneSolution
+import me.saks.advent.helpers.partTwoSolution
+import me.saks.advent.helpers.readInputLines
 import org.apache.commons.collections4.queue.CircularFifoQueue
 
 fun main() {
-    val input = "day09.txt"
+    val input = "2020/09.txt"
         .readInputLines()
         .map { it.toLong() }
     val buffer = CircularFifoQueue<Long>(25)

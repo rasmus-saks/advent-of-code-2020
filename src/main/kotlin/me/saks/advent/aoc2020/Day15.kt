@@ -1,4 +1,8 @@
-package me.saks.advent
+package me.saks.advent.aoc2020
+
+import me.saks.advent.helpers.partOneSolution
+import me.saks.advent.helpers.partTwoSolution
+import me.saks.advent.helpers.readInputSplitBy
 
 private val LAST_SPOKEN: MutableMap<Int, Int> = hashMapOf()
 
@@ -10,7 +14,7 @@ fun main() {
 fun solution(finalTurn: Int): Int {
     LAST_SPOKEN.clear()
     var last = 0
-    "day15.txt"
+    "2020/15.txt"
         .readInputSplitBy(",")
         .forEachIndexed { idx, n ->
             LAST_SPOKEN[n.toInt()] = idx + 1

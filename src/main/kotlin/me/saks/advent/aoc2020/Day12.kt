@@ -1,5 +1,8 @@
-package me.saks.advent
+package me.saks.advent.aoc2020
 
+import me.saks.advent.helpers.partOneSolution
+import me.saks.advent.helpers.partTwoSolution
+import me.saks.advent.helpers.readInputLines
 import kotlin.math.absoluteValue
 
 val INSTRUCTIONS: Map<Char, (Ship, Long) -> Ship> = mapOf(
@@ -33,7 +36,7 @@ val INSTRUCTIONS2: Map<Char, (Ship, Long) -> Ship> = mapOf(
 )
 
 fun main() {
-    "day12.txt"
+    "2020/12.txt"
         .readInputLines()
         .fold(Ship()) { ship, instr ->
             INSTRUCTIONS[instr[0]]!!(ship, instr.substring(1).toLong())
@@ -41,7 +44,7 @@ fun main() {
         .let { it.east.absoluteValue + it.north.absoluteValue }
         .partOneSolution()
 
-    "day12.txt"
+    "2020/12.txt"
         .readInputLines()
         .fold(Ship(Direction(10, 1))) { ship, instr ->
             INSTRUCTIONS2[instr[0]]!!(ship, instr.substring(1).toLong())

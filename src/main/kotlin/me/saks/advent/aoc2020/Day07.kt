@@ -1,9 +1,11 @@
-package me.saks.advent
+package me.saks.advent.aoc2020
+
+import me.saks.advent.helpers.*
 
 val BAG_REGEX = Regex("""(?<num>\d+) (?<color>[a-z]+ [a-z]+) bags?""")
 
 fun main() {
-    val rules = "day07.txt"
+    val rules = "2020/07.txt"
         .readInputSplitBy(".\n")
         .map { it.split(" bags contain ").toPair() }
         .map { sp ->

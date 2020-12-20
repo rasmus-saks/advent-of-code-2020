@@ -1,8 +1,6 @@
-package me.saks.advent
+package me.saks.advent.helpers
 
 import java.io.InputStreamReader
-import java.lang.Integer.max
-import java.lang.Integer.min
 
 fun <T> Collection<T>.allPairs(): List<Pair<T, T>> {
     return this.flatMap { el1 ->

@@ -1,11 +1,16 @@
-package me.saks.advent
+package me.saks.advent.aoc2020
+
+import me.saks.advent.helpers.get
+import me.saks.advent.helpers.partOneSolution
+import me.saks.advent.helpers.partTwoSolution
+import me.saks.advent.helpers.readInputSplitBy
 
 val RULE = Regex("""(?<name>[a-z ]+): (?<r1min>\d+)-(?<r1max>\d+) or (?<r2min>\d+)-(?<r2max>\d+)""")
 
 
 fun main() {
     val (rulesStr, myTicketStr, nearbyTicketsStr) =
-        "day16.txt"
+        "2020/16.txt"
             .readInputSplitBy("\n\n")
     val rules = rulesStr
         .split("\n")

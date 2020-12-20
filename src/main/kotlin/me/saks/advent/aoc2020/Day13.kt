@@ -1,7 +1,9 @@
-package me.saks.advent
+package me.saks.advent.aoc2020
+
+import me.saks.advent.helpers.*
 
 fun main() {
-    val input = "day13.txt"
+    val input = "2020/13.txt"
         .readInputLines()
     val earliest = input[0].toLong()
     input[1]
